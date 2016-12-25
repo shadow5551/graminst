@@ -41,7 +41,7 @@ public class FollowerList {
     }
 
     public void addingToArrayList(String line) {
-        if (line.contains("\">Follow</button>"))
+        //if (line.contains("\">Follow</button>"))
             list.add(line.substring(line.indexOf("title=") + 7, line.indexOf("\" href")));
     }
 
