@@ -19,7 +19,7 @@ public class Followers {
             robot.delay(500);
             robot.mouseMove(1000, 730);
             //вывелся полностью список
-            for (int i = 0; i < 150; i++) {
+            for (int i = 0; i < 5; i++) {
                 robot.delay(1000);
                 robot.mousePress(InputEvent.BUTTON1_MASK);
                 robot.mouseRelease(InputEvent.BUTTON1_MASK);
@@ -29,14 +29,14 @@ public class Followers {
             robot.keyPress(VK_S);
             robot.keyRelease(VK_S);
             robot.keyRelease(VK_CONTROL);
-            robot.delay(15000);
+            robot.delay(1000);
             terminalString.typeSymbolInTerminal("followers");
             robot.keyPress(VK_ENTER);
             robot.keyRelease(VK_ENTER);
-            robot.delay(1000);
+            robot.delay(3000);
             robot.keyPress(VK_ENTER);
             robot.keyRelease(VK_ENTER);
-            robot.delay(5000);
+            robot.delay(8000);
         } catch (AWTException e) {
             e.printStackTrace();
         }

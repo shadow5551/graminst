@@ -25,7 +25,7 @@ public class Account {
             robot.keyPress(VK_ENTER);
             robot.keyRelease(VK_ENTER);
             //закрытие терминала
-            robot.delay(1500);
+            robot.delay(4000);
             robot.keyPress(VK_ALT);
             robot.keyPress(VK_F4);
             robot.keyRelease(VK_F4);
