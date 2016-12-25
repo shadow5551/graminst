@@ -2,15 +2,15 @@
  * Created by root on 20.12.16.
  */
 public class Main {
-    public static void main(String[] args) throws Exception  {
-        Account openFollowers = new Account();
+    public static void main(String[] args) throws Exception {
+        Account account = new Account();
         Followers followers = new Followers();
-        openFollowers.roboting("https://www.instagram.com/uglys0ul/");
-       followers.openFollowers();
+        account.roboting("https://www.instagram.com/uglys0ul/");
+        followers.openFollowers();
         FollowerList followerList = new FollowerList();
         followerList.addFollowersToList();
         System.out.println(followerList.getList());
-       Follow follow  = new Follow();
+        Follow follow = new Follow();
         follow.startFollowPeople(followerList.getList());
 
         /*URL url = new URL("https://www.instagram.com/meryluigi0607/");
