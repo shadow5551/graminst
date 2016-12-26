@@ -9,9 +9,9 @@ public class AccountFollowingYet {
     PrintWriter writer = null;
 
     public void addingFollowingAccountsToFile(ArrayList list) throws IOException {
-        File file = new File("123.txt");
+        File file = new File("myfollowing.txt");
         if (!file.exists()) {
-            writer = new PrintWriter("123.txt");
+            writer = new PrintWriter("myfollowing.txt");
         } else {
             writer = new PrintWriter(new FileOutputStream(new File("123.txt"), true));
         }

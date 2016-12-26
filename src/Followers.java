@@ -13,13 +13,13 @@ public class Followers {
         try {
             Robot robot = new Robot();
             robot.delay(1500);
-            robot.mouseMove(855, 300);//705 , 655
+            robot.mouseMove(705, 300);//855 , 655
             robot.mousePress(InputEvent.BUTTON1_MASK);
             robot.mouseRelease(InputEvent.BUTTON1_MASK);
             robot.delay(500);
             robot.mouseMove(1000, 732);
             //вывелся полностью список
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 4; i++) {
                 robot.delay(1000);
                 robot.mousePress(InputEvent.BUTTON1_MASK);
                 robot.mouseRelease(InputEvent.BUTTON1_MASK);

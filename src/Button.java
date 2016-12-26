@@ -13,7 +13,7 @@ public class Button {
         robot.delay(5000);
         robot.delay(5000);
         for (int j = 0; j < flag; j++) {
-            for (int i = 0; i < 8; i++) {
+                for (int i = 0; i < 6; i++) {
                 robot.keyPress(VK_TAB);
                 robot.keyRelease(VK_TAB);
             }

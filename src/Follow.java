@@ -14,6 +14,7 @@ class Follow {
     private HashTab hashTab = new HashTab();
     private Map<String, Integer> hashMap = hashTab.getHashMap();
     private Robot robot = new Robot();
+    TerminalString terminalString = new TerminalString();
 
     Follow() throws AWTException {
     }
@@ -23,7 +24,7 @@ class Follow {
         int flag = 0;
         for (int i = 0; i < list.size(); i++) {
             startBrowser += ("--new-tab www.instagram.com/" + list.get(i) + "/ ");
-            goFollowNewPeople(startBrowser);
+            terminalString.typeSymbolInTerminal(startBrowser);
             startBrowser = "";
             flag++;
             if (flag % 10 == 0) {
@@ -51,18 +52,6 @@ class Follow {
             robot.keyPress(VK_TAB);
             robot.keyRelease(VK_TAB);
             robot.keyRelease(VK_ALT);
-        }
-    }
-
-    private void goFollowNewPeople(String startBrowser) {
-        robot.delay(1000);
-        for (int j = 0; j < startBrowser.length(); j++) {
-            for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
-                if (String.valueOf(startBrowser.charAt(j)).equals(entry.getKey())) {
-                    robot.keyPress(entry.getValue());
-                    robot.keyRelease(entry.getValue());
-                }
-            }
         }
     }
 }
