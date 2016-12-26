@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 /**
  * Created by root on 24.12.16.
  */
+
+//класс для тоого, чтобы записывать
+// тех людей, на которых подписался
 public class FollowerList {
     private ArrayList<String> list = new ArrayList<String>();
     private int counter = 0;
@@ -19,10 +22,6 @@ public class FollowerList {
         while ((line = reader.readLine()) != null) {
             if (flag != 0) {
                 if (line.contains("title")) {
-                    //здесь может вывалться если слишком много подписчиков
-                    System.out.println(line.length());
-                    System.out.println(line.substring(300, line.length()));
-                   // workingWithLine(line.substring(300, line.length()));
                     workingWithLine(line);
                 }
 
@@ -30,7 +29,6 @@ public class FollowerList {
             if (line.contains("<script type=\"text/javascript\">window._timings.domInteractive = Date.now()</script>")) {
                 flag++;
             }
-          //  list.remove("peacefulands");
         }
     }
 
@@ -43,7 +41,7 @@ public class FollowerList {
         else {
             lastsubstring = findNthIndexOf(line, "title=", counter + 2);
         }
-        String tempString = line.substring(beginSubstring,lastsubstring); //line.indexOf("title=") + 1);
+        String tempString = line.substring(beginSubstring,lastsubstring);
         System.out.println(tempString);
         if ((!tempString.contains("title=\"Facebook Cross Domain") || !tempString.contains("title=\"peacefulands\""))
                 && (tempString.contains("button class=\"_aj7mu _2hpcs _95tat _o0442\""))) {
@@ -56,10 +54,6 @@ public class FollowerList {
         return 1;
     }
 
- /*   public void addingToArrayList(String line) {
-        if (line.contains("\">Follow</button>"))
-            list.add(line.substring(line.indexOf("title=") + 7, line.indexOf("\" href")));
-    }*/
 
     public ArrayList<String> getList() {
         return list;

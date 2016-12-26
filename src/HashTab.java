@@ -4,6 +4,7 @@ import java.util.Map;
 /**
  * Created by root on 24.12.16.
  */
+//100 % ready
 public class HashTab {
     private Map<String, Integer> hashMap = new HashMap<>();
 

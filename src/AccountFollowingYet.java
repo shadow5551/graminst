@@ -13,7 +13,7 @@ public class AccountFollowingYet {
         if (!file.exists()) {
             writer = new PrintWriter("myfollowing.txt");
         } else {
-            writer = new PrintWriter(new FileOutputStream(new File("123.txt"), true));
+            writer = new PrintWriter(new FileOutputStream(new File("myfollowing.txt"), true));
         }
         addinglist(list);
         writer.close();
@@ -25,8 +25,7 @@ public class AccountFollowingYet {
                 (new FileReader("myfollowing.txt"));
         Iterator<String> iterator;
         String line;
-        String tempString = "1";
-        Boolean record;
+        String tempString;
         while ((line = reader.readLine()) != null) {
             for (iterator = list.iterator(); iterator.hasNext(); ) {
                 tempString = iterator.next();
