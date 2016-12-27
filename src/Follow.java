@@ -20,9 +20,15 @@ class Follow {
     }
 
     void startFollowPeople(ArrayList<String> list) throws AWTException {
-        openTerminaL(1);
+        openterminal(1);
         int flag = 0;
+        boolean max = true;
         for (int i = 0; i < list.size(); i++) {
+            if (i==50)
+            {
+                max = false;
+                break;
+            }
             startBrowser += ("--new-tab www.instagram.com/" + list.get(i) + "/ ");
             terminalString.typeSymbolInTerminal(startBrowser);
             startBrowser = "";
@@ -30,16 +36,17 @@ class Follow {
             if (flag % 10 == 0) {
                 button.clickingFollowingButton(flag);
                 flag = 0;
-                openTerminaL(2);
+                openterminal(2);
                 startBrowser = "firefox ";
             }
         }
-        System.out.println(startBrowser);
+        if (max=true){
         button.clickingFollowingButton(flag);
+        }
 
     }
 
-    private void openTerminaL(int i) {
+    private void openterminal(int i) {
         if (i == 1) {
             robot.keyPress(VK_CONTROL);
             robot.keyPress(VK_ALT);

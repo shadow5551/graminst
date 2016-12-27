@@ -5,24 +5,24 @@ import java.util.Iterator;
 /**
  * Created by root on 25.12.16.
  */
-public class AccountFollowingYet {
+public class MyAccount {
     PrintWriter writer = null;
 
-    public void addingFollowingAccountsToFile(ArrayList list) throws IOException {
-        File file = new File("myfollowing.txt");
+    public void addingFollowingAccountsToFile(ArrayList list,String nameOfFile) throws IOException {
+        File file = new File(nameOfFile);
         if (!file.exists()) {
-            writer = new PrintWriter("myfollowing.txt");
+            writer = new PrintWriter(nameOfFile);
         } else {
-            writer = new PrintWriter(new FileOutputStream(new File("myfollowing.txt"), true));
+            writer = new PrintWriter(new FileOutputStream(new File(nameOfFile), true));
         }
-        addinglist(list);
+        addinglist(list,nameOfFile);
         writer.close();
 
     }
 
-    private void addinglist(ArrayList list) throws IOException {
+    private void addinglist(ArrayList list,String nameOfFile) throws IOException {
         BufferedReader reader = new BufferedReader
-                (new FileReader("myfollowing.txt"));
+                (new FileReader(nameOfFile));
         Iterator<String> iterator;
         String line;
         String tempString;

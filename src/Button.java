@@ -19,7 +19,7 @@ public class Button {
             }
             robot.keyPress(VK_ENTER);
             robot.keyRelease(VK_ENTER);
-            robot.delay(3000);
+            robot.delay(35000);
             robot.keyPress(VK_CONTROL);
             robot.keyPress(VK_W);
             robot.keyRelease(VK_W);

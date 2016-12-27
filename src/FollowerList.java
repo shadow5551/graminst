@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 // тех людей, на которых подписался
 public class FollowerList {
     private ArrayList<String> list = new ArrayList<String>();
-    private int counter = 0;
+    private int counter;
 
     public void addFollowersToList() throws Exception {
         BufferedReader reader = new BufferedReader
@@ -22,6 +22,7 @@ public class FollowerList {
         while ((line = reader.readLine()) != null) {
             if (flag != 0) {
                 if (line.contains("title")) {
+                    counter = 0;
                     workingWithLine(line);
                 }
 
@@ -43,8 +44,8 @@ public class FollowerList {
         }
         String tempString = line.substring(beginSubstring,lastsubstring);
         System.out.println(tempString);
-        if ((!tempString.contains("title=\"Facebook Cross Domain") || !tempString.contains("title=\"peacefulands\""))
-                && (tempString.contains("button class=\"_aj7mu _2hpcs _95tat _o0442\""))) {
+        if (!tempString.contains("Facebook Cross Domain") && !tempString.contains("peacefulands")
+             && !tempString.contains("title=\"Verified\"")    && (tempString.contains("button class=\"_aj7mu _2hpcs _95tat _o0442\""))) {
             list.add(tempString.substring(tempString.indexOf("title=") + 7, tempString.indexOf("\" href")));
         }
         counter++;

@@ -5,6 +5,7 @@ import static java.awt.event.KeyEvent.*;
 /**
  * Created by root on 24.12.16.
  */
+//запускает страницу с юзером и закрывает терминал
 public class Account {
     TerminalString terminalString = new TerminalString();
 
